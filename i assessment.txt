@@ -1,0 +1,436 @@
+Implement two stacks in an array
+
+Write a C  program to implement push and pop operation on stack and to display the contents of the stack.
+
+
+ 
+
+Create a data structure twoStacks that represents two stacks. Implementation of twoStacks should use only one array, i.e., both stacks should use the same array for storing elements. Following functions must be supported by twoStacks.
+
+push1(int x) –> pushes x to first stack
+push2(int x) –> pushes x to second stack
+
+pop1() –> pops an element from first stack and return the popped element
+pop2() –> pops an element from second stack and return the popped element
+
+display1() -> displays the contents of first stack
+display2() -> displays the contents of second stack.
+
+printMenu() -> displays the choices.
+ 
+
+Consider implementing a dynamically sized stack using an array.
+
+Create a structure
+
+struct twoStacks
+
+{
+
+    int * arr;
+
+    int top1, top2;
+
+    int size;
+
+};
+
+ 
+
+The structure stack has a pointer 'arr' to a dynamically allocated array (used to hold the contents of the stack), an integer 'size' that holds the size of this array (i.e the maximum number of data that can be held in this array) and an integer 'top1' which stores the array index of the top element in the stack1 and an integer 'top2' which stores the array index of the top element in the stack2.
+
+In the initstack function intialize the value of top1 to -1 and top2 to size, and initialize the value of size.
+
+Print the message “Stack1 is full” in the push1 function when an attempt is made to push a data into a full stack1.
+Print the message “Stack2 is full” in the push2 function when an attempt is made to push a data into a full stack2.
+
+Print the message “Stack1 is empty” in the pop1 function and return the value -1000 when an attempt is made to pop data from an empty stack1.
+Print the message “Stack2 is empty” in the pop2 function and return the value -1000 when an attempt is made to pop data from an empty stack2.
+Print the contents of Stack1 "The contents of the stack1 are" in the display1 function, and when stack is empty display "{}".
+Print the contents of Stack2 "The contents of the stack2 are" in the display2 function, and when stack is empty display "{}".
+
+ 
+
+Function specifications:
+
+void initstack(struct twoStacks * p, int size)
+void push1(struct twoStacks * p, int item)
+void push2(struct twoStacks * p, int item)
+int pop1(struct twoStacks * p)
+int pop2(struct twoStacks * p)
+void display1(struct twoStacks p)
+void display2(struct twoStacks p)
+void printMenu()
+ 
+
+Input and Output Format:
+
+Refer sample input and output for formatting specifications.
+
+ 
+
+Note: All text in bold corresponds to input and the rest corresponds to output.
+
+
+Sample Input and Output:
+
+Enter the maximum size of the stack
+
+5
+
+Choice 1 : Push1
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+Enter your choice
+
+1
+
+Enter the element to be pushed in stack1
+
+5
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+Enter the element to be pushed in stack2
+
+10
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+Enter the element to be pushed in stack2
+
+15
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed in stack1
+
+11
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+Enter the element to be pushed in stack2
+7
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed in stack1
+45
+Stack1 is full
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+5
+
+The contents of the stack1 are 5 11
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+6
+
+The contents of the stack2 are 10 15 7
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+3
+The popped element from stack1 is 11
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+
+2
+Enter the element to be pushed in stack2
+45
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+3
+The popped element from stack1 is 5
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+3
+Stack1 is empty
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+5
+The contents of the stack1 are {}
+
+Choice 1 : Push1
+
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+
+Enter your choice
+4
+The popped element from stack2 is 45
+Choice 1 : Push1
+Choice 2 : Push2
+Choice 3 : Pop1
+Choice 4 : Pop2
+Choice 5 : Display1
+Choice 6 : Display2
+Any other choice : Exit
+Enter your choice
+7
+
+Explanation of Sample input and output:
+
+
+Function Definitions:
+void push1 (struct twoStacks *p, int item)
+void push2 (struct twoStacks *p,int item)
+int pop1 (struct twoStacks *p)
+int pop2 (struct twoStacks *p)
+void display1 (struct twoStacks p)
+void display2 (struct twoStacks p)
+void initstack (struct twoStacks *p, int n)
+
+
+
+
+
+PROGRAM:
+
+import java.util.Scanner;
+import java.io.*;
+class Stack{
+    int size;
+    int[] arr1;
+    int[] arr2;
+    int top1=-1;
+    int top2=-1;
+    public Stack(int size){
+        this.size=size;
+        arr1=new int[size];
+         arr2=new int[size];
+    }
+    
+    public void push1(int data){
+        if(top1==size-1){
+            System.out.println("Stack1 is full");
+        }else{
+            top1++;
+            arr1[top1]=data;
+        }
+    }
+    public void push2(int data){
+        if(top2==size-1){
+            System.out.println("Stack2 is full");
+        }else{
+            top2++;
+            arr2[top2]=data;
+        }
+    }
+    public void pop1(){
+        if(top1==-1){
+            System.out.println("Stack1 is empty");
+        }else{
+             System.out.println("The popped element from the stack1 is "+arr1[top1]);
+            int temp1=top1;
+            top1--;
+           temp1=0;
+        }
+    }
+    public void pop2(){
+        if(top2==-1){
+            System.out.println("Stack2 is empty");
+        }else{
+             System.out.println("The popped element from the stack1 is "+arr2[top2]);
+            int temp2=top2;
+            top2--;
+            ;
+            temp2=0;
+           
+        }
+    }
+    public void display1(){
+        if(top1==-1){
+            System.out.println("Stack1 is empty");
+        }else{
+        for(int i=0;i<=top1;i++){
+            System.out.println(arr1[i]);
+        }}
+    }
+    public void display2(){
+        if(top2==-1){
+            System.out.println("Stack2 is empty");
+        }else{
+        for(int i=0;i<=top2;i++){
+            System.out.println(arr2[i]);
+        }}
+    }
+    
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the maximum size of stack:");
+		int size=sc.nextInt();
+		Stack s=new Stack(size);
+		int choice;
+		do{
+		    System.out.println("1.Push 1");
+		    System.out.println("2.Push 2");
+		    System.out.println("3.Pop 1");
+		    System.out.println("4.Pop 2");
+		    System.out.println("5.Display 1");
+		    System.out.println("6.Display 2");
+		    System.out.println("Any other choice:Exit");
+		    System.out.println("Enter the choice:");
+		    choice=sc.nextInt();
+		    switch(choice){
+		        case 1:
+		            System.out.println("Enter the element to be pushed in stack1");
+		            int data1=sc.nextInt();
+		            s.push1(data1);
+		            break;
+		        case 2:
+		            System.out.println("Enter the element to be pushed in stack2");
+		            int data2=sc.nextInt();
+		            s.push2(data2);
+		            break;
+		        case 3:
+		            s.pop1();
+		            break;
+		        case 4:
+		            s.pop2();
+		            break;
+		       case 5:
+		           System.out.println("The contents of the stack are:");
+		           s.display1();
+		           break;
+		       case 6:
+		           System.out.println("The contents of the stack are:");
+		           s.display2();
+		           break;
+		       default:
+		           System.out.println("Exiting");
+		           break;
+		    }
+		}while(choice!=6);
+		
+	}
+}

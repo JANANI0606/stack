@@ -1,0 +1,420 @@
+Stack 1 : Array Implementation : Push and Pop
+
+ 
+
+Consider implementing a fixed size stack of maximum size 5 using an array.
+
+ 
+
+Create a structure
+
+ 
+
+struct stack {
+
+int a[5];
+
+int top;
+
+};
+
+ 
+
+Note :
+The array a holds the contents of the stack and the integer top stores the index of the element at the top of the stack.
+
+ 
+
+Write a program to implement push and pop operation on stack and to display the contents of the stack.
+
+ 
+
+In the initstack function intialize the value of top to -1.
+
+Print the message “Stack is full” in the push function when an attempt is made to push a data into a full stack.
+
+Print the message “Stack is empty” in the pop function and return the value -1000 when an attempt is made to pop data from an empty stack.
+
+ 
+
+Refer function specifications for further details.
+
+ 
+
+Input and Output Format:
+
+Refer sample input and output for formatting specifications.
+
+ 
+
+Note : 
+ The statement “The contents of the stack are” is in the main function.
+  In the display function, if the stack is empty, print “ {}”.
+
+ 
+
+[All text in bold corresponds to input and the rest corresponds to output]
+
+Sample Input and Output:
+
+ 
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+3
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+3
+
+The contents of the stack are 3
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+5
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+The popped element is 5
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+The popped element is 3
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+Stack is empty
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+1
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+2
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+3
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+4
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+5
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+1
+
+Enter the element to be pushed
+
+6
+
+Stack is full
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+3
+
+The contents of the stack are 1 2 3 4 5
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+The popped element is 5
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+3
+
+The contents of the stack are 1 2 3 4
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+2
+
+The popped element is 4
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+3
+
+The contents of the stack are 1 2 3
+
+Choice 1 : Push
+
+Choice 2 : Pop
+
+Choice 3 : Display
+
+Any other choice : Exit
+
+Enter your choice
+
+5
+
+ 
+
+Function Definitions:
+void initstack (struct stack * p)
+void push (struct stack * p, int item)
+void display (struct stack p)
+int pop (struct stack * p)
+
+
+
+
+PROGRAM:
+import java.util.Scanner;
+import java.io.*;
+class Stack{
+    int top=-1;
+    int[] arr=new int[5];
+    public void push(int data){
+        if(top==arr.length-1){
+            System.out.println("Stack is full");
+        }else{
+            top++;
+            arr[top]=data;
+        }
+    }
+    
+    public void pop(){
+        if(top==-1){
+            System.out.println("Stack is empty");
+        }else{
+             System.out.println("The popped element from the stack is "+arr[top]);
+            int temp=top;
+            top--;
+           temp=0;
+        }
+    }
+    
+    public void display(){
+        if(top==-1){
+            System.out.println("Stack is empty");
+        }else{
+        for(int i=0;i<=top;i++){
+            System.out.println(arr[i]);
+        }}
+    }
+   
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner sc=new Scanner(System.in);
+		
+		Stack s=new Stack();
+		int choice;
+		do{
+		    System.out.println("1.Push");
+		    
+		    System.out.println("2.Pop ");
+		    
+		    System.out.println("3.Display ");
+                    System.out.println("Exit");
+
+		    
+		    System.out.println("Any other choice:Exit");
+		    System.out.println("Enter the choice:");
+		    choice=sc.nextInt();
+		    switch(choice){
+		        case 1:
+		            System.out.println("Enter the element to be pushed in stack");
+		            int data=sc.nextInt();
+		            s.push(data);
+		            break;
+		        
+		        case 2:
+		            s.pop();
+		            break;
+		        
+		       case 3:
+		           System.out.println("The contents of the stack are:");
+		           s.display();
+		      
+		       default:
+		           System.out.println("Exiting");
+		           break;
+		    }
+		}while(choice!=4);
+	
+	}
+}

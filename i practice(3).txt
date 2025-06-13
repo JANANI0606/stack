@@ -1,0 +1,198 @@
+Stack as a Linked List
+
+Write a menu driven program to implement stack as a linked list. Assume that the size of the stack is 5.
+
+Define a structure
+
+struct node {
+    int data ;
+    struct node * link ;
+} ;
+
+Include functions:
+    push --- to push an element into the stack.
+    pop --- to pop an element from the stack. If the stack is empty, print “There is no elements in the stack”  (without quotes)
+    display --- to display the elements in the stack. If empty display “{}” (without quotes)
+    count --- to count the number of elements in the stack
+
+Refer function specifications for further details.
+
+Input and Output Format:
+Get the choice of the function to be executed from the user:
+
+    Choice 1 --- push
+    Choice 2 --- pop
+    Choice 3 --- display
+    Choice 4 --- count
+    Any other choice --- exit
+
+Choice 1: Enter the integer data to be pushed into the stack.
+Choice 2: No additional input
+Choice 3: No additional input
+Choice 4: No additional input
+
+Sample Input & Output:
+
+Choice 1 : To push data
+Choice 2 : To pop data
+Choice 3 : To display
+Choice 4 : To count
+
+Enter your choice
+1
+Enter the data to be pushed
+34
+Enter your choice
+1
+Enter the data to be pushed
+23
+Enter your choice
+1
+Enter the data to be pushed
+55
+Enter your choice
+3
+Stack Contents are
+55 23 34
+Enter your choice
+1
+Enter the data to be pushed
+89
+Enter your choice
+3
+Stack Contents are
+89 55 23 34
+Enter your choice
+4
+Number of elements in the linked list is 4
+Enter your choice
+2
+Element Popped is 89
+Enter your choice
+3
+Stack Contents are
+55 23 34
+Enter your choice
+2
+Element Popped is 55
+Enter your choice
+2
+Element Popped is 23
+Enter your choice
+4
+Number of elements in the linked list is 1
+Enter your choice
+2
+Element Popped is 34
+Enter your choice
+2
+There is no elements in the stack
+Enter your choice
+4
+Number of elements in the linked list is 0
+Enter your choice
+3
+Stack Contents are
+{}
+Enter your choice
+6
+END
+Function Definitions:
+void push (struct node **, int )
+void pop (struct node **)
+
+
+
+
+
+PROGRAM:
+import java.util.Scanner;
+import java.io.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+    }
+}
+class Stack{
+    Node top=null;
+    public void push(int data){
+        Node n=new  Node(data);
+        n.next=top;
+        top=n;
+    }
+    public void pop(){
+         if(top==null){
+            System.out.println("Stack empty");
+        }else{
+        System.out.println("Element popped "+top.data);
+        Node temp=top;
+        top=top.next;
+        temp=null;
+    }}
+    public void display(){
+        Node temp=top;
+        if(temp==null){
+            System.out.println("Stack empty");
+        }else{
+            System.out.println("The contents of the stack are:");
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
+        }}
+    }
+    public void count(){
+        Node temp=top;
+       int c=0;
+        while(temp!=null){
+            c++;
+            
+            temp=temp.next;
+        }System.out.println("Number of elements in linked list:"+c);}
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner sc=new Scanner(System.in);
+		
+		Stack s=new Stack();
+		int choice;
+		do{
+		    System.out.println("1.Push");
+		    
+		    System.out.println("2.Pop ");
+		    
+		    System.out.println("3.Display ");
+		    System.out.println("4.Count");
+		    
+		    System.out.println("Any other choice:Exit");
+		    System.out.println("Enter the choice:");
+		    choice=sc.nextInt();
+		    switch(choice){
+		        case 1:
+		            System.out.println("Enter the element to be pushed in stack");
+		            int data=sc.nextInt();
+		            s.push(data);
+		            break;
+		        
+		        case 2:
+		            s.pop();
+		            break;
+		        
+		       case 3:
+		           
+		           s.display();
+		      case 4:
+		          s.count();
+		      
+		       default:
+		           System.out.println("Exiting");
+		           break;
+		    }
+		}while(choice!=5);
+	
+	}
+}
